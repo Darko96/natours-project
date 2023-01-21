@@ -116,6 +116,7 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  padding-left: 35px;
 
   animation-name: moveInLeft;
   animation-duration: 1s;
@@ -132,7 +133,8 @@ body {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 17.5px;
+  padding-left: 17.5px;
 
   animation: moveInRight 1s;
 }
@@ -171,6 +173,18 @@ Onda pri kraju animacije ode malo levo i na kraju stane na pocetnoj poziciji */
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 /* link predstavlja element koji jos nije bio posecen
 dok visited predstavlja element koji je vec bio posecen */
 .btn:link,
@@ -183,6 +197,7 @@ dok visited predstavlja element koji je vec bio posecen */
   /* Zadajemo da sve animacije traju 0.2s sekunde */
   /* Ovde treba da zadamo transition, tako je pravilno */
   transition: all 0.2s;
+  position: relative;
 }
 
 /* Pomeramo dugme na gore -3px */
@@ -208,4 +223,41 @@ dok visited predstavlja element koji je vec bio posecen */
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+/* Zelimo da kreiramo element koji ce izgledati kao i dugme koje vec
+imamo, onda cemo taj element da stavimo odmah iza dugmeta, i onda kada
+sklonimo mis sa dugmeta onda element ide iza dugmeta */
+.btn::after {
+  /* Uvek moramo da definisemo content i display svojstva */
+  content: "";
+  display: inline-block;
+  /* after pseudo element se tretira kao dete tako da podesavanje
+  visine i sirine se odnosi na roditeljski element tj u ovom slucaju
+  button  */
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  /* Povecavamo pseudo element */
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  /* Stilovi unutar 0% dela unutar keyframes-a ce biti odmah aktivirani
+  pre nego sto animacija krene, uz pomoc ove funkcije */
+  animation-fill-mode: backwards;
 }
