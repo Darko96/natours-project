@@ -1,0 +1,68 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  /* Dodavanje belih ivica oko stranice  */
+  padding: 30px;
+}
+
+.header {
+  /* Postavlja visinu hedera da uvek bude 95% vidljivog dela ekrana */
+  height: 95vh;
+  /* Kreiramo gradijant sa pozadinskom slikom
+   Prvo treba da definisemo gradijent
+   - Strana ka kojoj treba da ide gradijent
+   - Boje koje treba da sadrzi gradijent
+   - Pozadinska slika koje ce se nalaziti iza gradijenta */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url("../img/hero.jpg");
+  /* Skalira pozadinsku sliku u odgovarajućem pravcu tako da se 
+  zadrže njene unutrašnje proporcije. 
+  Takodje ce lepo popuniti element u kom se nalazi koje god velicine
+  taj element bio */
+  background-size: cover;
+  /* Postavljamo da se vrh pozadine uvek nalazi na samom vrhu kontejnera
+  u kom se nalazi, tako da kada prozor krene da se smanjuje, vrh 
+  slike ce uvek ostati na svom mestu tj na samom vrhu */
+  background-position: top;
+  /* Treba da odredimo poligon ili kao neki element sa vise uglova
+   u kojem ce slika ili element biti vidljiv 
+   U smeru kazaljke na satu treba da odredimo tacke za svaki cosak
+   od slike ili elementa
+   PRVA TACKA: Ne zelimo da menjamo element po x i y osi tako da 
+   ovde ostaje 0, 0 
+   DRUGA TACKA: Sada zadajemo koliko treba druga tacka da bude odeljena
+   od prve tacke, posto ide preko celog element po horizontali onda 
+   dodajemo X-u 100%, a Y ostaje isti jer ne menjamo nista vertikalno
+   TRECA TACKA: Sada zadajemo koliko ce treca tacka biti daleko od prve
+   Ovde ce se tacka promeniti po vertikali ali i po horizontali
+   tako da zadajemo X kortinatu da bude 100% jer idemo na drugi kraj
+   kontejnera, pa zadajemo Y kordinatu da ode ka dole 70%
+   CETVRTA TACKA: Na kraju zadajemo koliko ce cetvrta tacka biti daleko od 
+   prve, kao sto vidimo samo se udaljava po vertikali tako da zadajemo da 
+   X bude 0 a Y kordinata da bude 100% jer idemo skroz ka dole
+   */
+
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
