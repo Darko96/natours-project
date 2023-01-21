@@ -65,4 +65,56 @@ body {
    */
 
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  /* Ne moramo da odredjujemo sirinu jer ce se ona automatski
+  odrediti na osnovu visine, isto vazi i kada odredimo samo sirinu */
+  height: 35px;
+}
+
+.text-box {
+  /* Prbacujemo kontejner koji sadrzi naslov na sredinu ekrana
+  Ali se onda nece nalaziti skroz na sredini jer ce se pocetak kontejnera
+  nalaziti na samoj sredini ali da bi onda stvarno centrirali tekst
+  na samu sredinu, treba da koristimo transform i translate
+  da bi ga pomerili po X i Y za -50% od svoje sirne i visine */
+  position: absolute;
+  /* top i left procenti su pomeranja od odozgo i sa leve strane u 
+  odnosu na roditelja */
+  top: 40%;
+  left: 50%;
+  /* ali transform tj translate procenti se odnose na pomeranje u 
+  odnosu na sam element, tj -50% po X u odnosu na samog sebe
+  tj to mozemo da gledamo kao da kazemo
+  Pomeri se -50% svoje duzine po X i 50% svoje visine po Y */
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  /* Da bi prikazali span tekst u dve kolone koristimo display block */
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
 }
