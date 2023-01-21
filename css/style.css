@@ -97,6 +97,7 @@ body {
   tj to mozemo da gledamo kao da kazemo
   Pomeri se -50% svoje duzine po X i 50% svoje visine po Y */
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
@@ -106,6 +107,7 @@ body {
   /* Posto postoji blago pomeranje teksta na gore na kraju animacije
   ovu funkciju bi trebalo koristiti da bi to sprecili */
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -167,4 +169,43 @@ Onda pri kraju animacije ode malo levo i na kraju stane na pocetnoj poziciji */
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/* link predstavlja element koji jos nije bio posecen
+dok visited predstavlja element koji je vec bio posecen */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  /* Zadajemo da sve animacije traju 0.2s sekunde */
+  /* Ovde treba da zadamo transition, tako je pravilno */
+  transition: all 0.2s;
+}
+
+/* Pomeramo dugme na gore -3px */
+.btn:hover {
+  transform: translateY(-3px);
+  /* Za box-shadow zadajemo kolika ce biti senka po Y i X
+  Pa zadajemo koliki ce biti blur 
+  I na kraju zadajemo opacity za senku */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* active predstavlja stanje tj element kada kliknemo na dugme */
+/* Pomeramo dugme na dole 1px */
+.btn:active {
+  transform: translateY(1px);
+  /* Zadajemo da kada kliknemo na dugme, senka ce se smanjiti po 
+  Y kordinati, tako da vise nece biti 10px nego 5px
+  Takodje smanjujemo velicinu blur-a, da bude 10px
+   */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
