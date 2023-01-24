@@ -73,19 +73,19 @@ body {
   position: relative;
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   /* Ne moramo da odredjujemo sirinu jer ce se ona automatski
   odrediti na osnovu visine, isto vazi i kada odredimo samo sirinu */
   height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
   /* Prbacujemo kontejner koji sadrzi naslov na sredinu ekrana
   Ali se onda nece nalaziti skroz na sredini jer ce se pocetak kontejnera
   nalaziti na samoj sredini ali da bi onda stvarno centrirali tekst
@@ -114,7 +114,7 @@ body {
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   /* Da bi prikazali span tekst u dve kolone koristimo display block */
   display: block;
   font-size: 6rem;
@@ -133,7 +133,7 @@ body {
   /* animation-timing-function: ease-out; */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -224,7 +224,7 @@ dok visited predstavlja element koji je vec bio posecen */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -249,7 +249,7 @@ sklonimo mis sa dugmeta onda element ide iza dugmeta */
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -259,7 +259,7 @@ sklonimo mis sa dugmeta onda element ide iza dugmeta */
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   /* Stilovi unutar 0% dela unutar keyframes-a ce biti odmah aktivirani
   pre nego sto animacija krene, uz pomoc ove funkcije */
