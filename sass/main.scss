@@ -1,11 +1,16 @@
-@charset "UTF-8";
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   font-family: "Lato", sans-serif;
@@ -14,7 +19,8 @@ body {
   line-height: 1.7;
   color: #777;
   /* Dodavanje belih ivica oko stranice  */
-  padding: 3rem; }
+  padding: 3rem;
+}
 
 .header {
   /* Postavlja visinu hedera da uvek bude 95% vidljivog dela ekrana */
@@ -24,7 +30,12 @@ body {
    - Strana ka kojoj treba da ide gradijent
    - Boje koje treba da sadrzi gradijent
    - Pozadinska slika koje ce se nalaziti iza gradijenta */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../img/hero.jpg");
   /* Skalira pozadinsku sliku u odgovarajućem pravcu tako da se 
   zadrže njene unutrašnje proporcije. 
   Takodje ce lepo popuniti element u kom se nalazi koje god velicine
@@ -51,18 +62,23 @@ body {
    prve, kao sto vidimo samo se udaljava po vertikali tako da zadajemo da 
    X bude 0 a Y kordinata da bude 100% jer idemo skroz ka dole
    */
+
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  position: relative; }
+
+  position: relative;
+}
 
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
+  left: 4rem;
+}
 
 .header__logo {
   /* Ne moramo da odredjujemo sirinu jer ce se ona automatski
   odrediti na osnovu visine, isto vazi i kada odredimo samo sirinu */
-  height: 3.5rem; }
+  height: 3.5rem;
+}
 
 .header__text-box {
   /* Prbacujemo kontejner koji sadrzi naslov na sredinu ekrana
@@ -80,15 +96,18 @@ body {
   tj to mozemo da gledamo kao da kazemo
   Pomeri se -50% svoje duzine po X i 50% svoje visine po Y */
   transform: translate(-50%, -50%);
-  text-align: center; }
+  text-align: center;
+}
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+
   /* Posto postoji blago pomeranje teksta na gore na kraju animacije
   ovu funkciju bi trebalo koristiti da bi to sprecili */
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
+  margin-bottom: 6rem;
+}
 
 .heading-primary--main {
   /* Da bi prikazali span tekst u dve kolone koristimo display block */
@@ -97,14 +116,17 @@ body {
   font-weight: 400;
   letter-spacing: 3.5rem;
   padding-left: 3.5rem;
+
   animation-name: moveInLeft;
   animation-duration: 1s;
+
   /* Mozemo da zadamo da animacija krene posle nekog vremena */
   /* animation-delay: 1s; */
   /* Mozemo da zadamo da se animacija izvrsi nekoliko puta */
   /* animation-iteration-count: 3; */
   /* Mozemo da zadamo koliko ce se animacija brzo izvrsiti */
-  /* animation-timing-function: ease-out; */ }
+  /* animation-timing-function: ease-out; */
+}
 
 .heading-primary--sub {
   display: block;
@@ -112,37 +134,55 @@ body {
   font-weight: 700;
   letter-spacing: 1.7rem;
   padding-left: 1.7rem;
-  animation: moveInRight 1s; }
+
+  animation: moveInRight 1s;
+}
 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateX(-10rem);
+  }
+
   80% {
-    transform: translate(1rem); }
+    transform: translate(1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 /* Tekst krene sa pocetne pozicije koji je pomeren ka desno 100px
 Onda pri kraju animacije ode malo levo i na kraju stane na pocetnoj poziciji */
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
+
   80% {
-    transform: translate(-1rem); }
+    transform: translate(-1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 /* link predstavlja element koji jos nije bio posecen
 dok visited predstavlja element koji je vec bio posecen */
@@ -156,7 +196,8 @@ dok visited predstavlja element koji je vec bio posecen */
   /* Zadajemo da sve animacije traju 0.2s sekunde */
   /* Ovde treba da zadamo transition, tako je pravilno */
   transition: all 0.2s;
-  position: relative; }
+  position: relative;
+}
 
 /* Pomeramo dugme na gore -3px */
 .btn:hover {
@@ -164,7 +205,8 @@ dok visited predstavlja element koji je vec bio posecen */
   /* Za box-shadow zadajemo kolika ce biti senka po Y i X
   Pa zadajemo koliki ce biti blur 
   I na kraju zadajemo opacity za senku */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
 
 /* active predstavlja stanje tj element kada kliknemo na dugme */
 /* Pomeramo dugme na dole 1px */
@@ -174,11 +216,13 @@ dok visited predstavlja element koji je vec bio posecen */
   Y kordinati, tako da vise nece biti 10px nego 5px
   Takodje smanjujemo velicinu blur-a, da bude 10px
    */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
 
 .btn--white {
   background-color: #fff;
-  color: #777; }
+  color: #777;
+}
 
 /* Zelimo da kreiramo element koji ce izgledati kao i dugme koje vec
 imamo, onda cemo taj element da stavimo odmah iza dugmeta, i onda kada
@@ -197,18 +241,22 @@ sklonimo mis sa dugmeta onda element ide iza dugmeta */
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s; }
+  transition: all 0.4s;
+}
 
 .btn--white::after {
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 .btn:hover::after {
   /* Povecavamo pseudo element */
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
+  opacity: 0;
+}
 
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   /* Stilovi unutar 0% dela unutar keyframes-a ce biti odmah aktivirani
   pre nego sto animacija krene, uz pomoc ove funkcije */
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+}
