@@ -13,14 +13,18 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
   /* Dodavanje belih ivica oko stranice  */
-  padding: 30px;
+  padding: 3rem;
 }
 
 .header {
@@ -71,14 +75,14 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
   /* Ne moramo da odredjujemo sirinu jer ce se ona automatski
   odrediti na osnovu visine, isto vazi i kada odredimo samo sirinu */
-  height: 35px;
+  height: 3.5rem;
 }
 
 .text-box {
@@ -107,16 +111,16 @@ body {
   /* Posto postoji blago pomeranje teksta na gore na kraju animacije
   ovu funkciju bi trebalo koristiti da bi to sprecili */
   backface-visibility: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
   /* Da bi prikazali span tekst u dve kolone koristimo display block */
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
-  padding-left: 35px;
+  letter-spacing: 3.5rem;
+  padding-left: 3.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 1s;
@@ -131,10 +135,10 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.5px;
-  padding-left: 17.5px;
+  letter-spacing: 1.7rem;
+  padding-left: 1.7rem;
 
   animation: moveInRight 1s;
 }
@@ -142,11 +146,11 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
 
   80% {
-    transform: translate(10px);
+    transform: translate(1rem);
   }
 
   100% {
@@ -160,11 +164,11 @@ Onda pri kraju animacije ode malo levo i na kraju stane na pocetnoj poziciji */
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
 
   80% {
-    transform: translate(-10px);
+    transform: translate(-1rem);
   }
 
   100% {
@@ -176,7 +180,7 @@ Onda pri kraju animacije ode malo levo i na kraju stane na pocetnoj poziciji */
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
 
   100% {
@@ -191,9 +195,9 @@ dok visited predstavlja element koji je vec bio posecen */
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   /* Zadajemo da sve animacije traju 0.2s sekunde */
   /* Ovde treba da zadamo transition, tako je pravilno */
   transition: all 0.2s;
@@ -202,22 +206,22 @@ dok visited predstavlja element koji je vec bio posecen */
 
 /* Pomeramo dugme na gore -3px */
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-0.3rem);
   /* Za box-shadow zadajemo kolika ce biti senka po Y i X
   Pa zadajemo koliki ce biti blur 
   I na kraju zadajemo opacity za senku */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 /* active predstavlja stanje tj element kada kliknemo na dugme */
 /* Pomeramo dugme na dole 1px */
 .btn:active {
-  transform: translateY(1px);
+  transform: translateY(0.1rem);
   /* Zadajemo da kada kliknemo na dugme, senka ce se smanjiti po 
   Y kordinati, tako da vise nece biti 10px nego 5px
   Takodje smanjujemo velicinu blur-a, da bude 10px
    */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
@@ -237,7 +241,7 @@ sklonimo mis sa dugmeta onda element ide iza dugmeta */
   button  */
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
